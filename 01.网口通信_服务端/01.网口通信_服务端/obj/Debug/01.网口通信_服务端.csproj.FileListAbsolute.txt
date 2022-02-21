@@ -1,0 +1,11 @@
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\bin\Debug\01.网口通信_服务端.exe.config
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\bin\Debug\01.网口通信_服务端.exe
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\bin\Debug\01.网口通信_服务端.pdb
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\01.网口通信_服务端.csproj.AssemblyReference.cache
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\01.网口通信_服务端.csproj.SuggestedBindingRedirects.cache
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\_01.网口通信_服务端.Form1.resources
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\_01.网口通信_服务端.Properties.Resources.resources
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\01.网口通信_服务端.csproj.GenerateResource.cache
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\01.网口通信_服务端.csproj.CoreCompileInputs.cache
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\01.网口通信_服务端.exe
+F:\Learning\NetworkPort\01.网口通信_服务端\01.网口通信_服务端\obj\Debug\01.网口通信_服务端.pdb

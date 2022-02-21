@@ -1,0 +1,10 @@
+F:\Learning\NetworkPort\02.网口通信_客户端\bin\Debug\02.网口通信_客户端.exe.config
+F:\Learning\NetworkPort\02.网口通信_客户端\bin\Debug\02.网口通信_客户端.exe
+F:\Learning\NetworkPort\02.网口通信_客户端\bin\Debug\02.网口通信_客户端.pdb
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\02.网口通信_客户端.csproj.SuggestedBindingRedirects.cache
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\_02.网口通信_客户端.Form1.resources
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\_02.网口通信_客户端.Properties.Resources.resources
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\02.网口通信_客户端.csproj.GenerateResource.cache
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\02.网口通信_客户端.csproj.CoreCompileInputs.cache
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\02.网口通信_客户端.exe
+F:\Learning\NetworkPort\02.网口通信_客户端\obj\Debug\02.网口通信_客户端.pdb
