@@ -21,13 +21,12 @@ namespace _02.网口通信_客户端
 
         Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
       
-
         //接收数据
         private void ReceiveMsg()
         {
             while (true)
             {
-                byte[] buffer = new byte[1024*1024*2];
+                byte[] buffer = new byte[1024 * 1024 * 2];
                 int len = 0;
 
                 try

@@ -19,10 +19,9 @@ namespace _01.网口通信_服务端
             InitializeComponent();
         }
 
-        Socket server =new Socket (AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp);
-        private Dictionary<string,Socket> Clientlist = new Dictionary<string,Socket>();
+        Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private Dictionary<string, Socket> Clientlist = new Dictionary<string, Socket>();
         string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
 
         private void btStart_Click(object sender, EventArgs e)
         {
@@ -37,8 +36,10 @@ namespace _01.网口通信_服务端
                 MessageBox.Show("无法启动服务器：" + ex.Message);
               
             }
-            server.Listen(3);
 
+            server.Listen(3);//设置接收传入最大的连接数
+
+            //开启线程进行监听
             Task.Factory.StartNew(new Action( () =>
             {
                 Listens();
@@ -58,9 +59,8 @@ namespace _01.网口通信_服务端
             {
                 Client = server.Accept();
                 string  client =Client.RemoteEndPoint.ToString();
-                //MessageBox.Show(client + ":连接了服务器");
 
-                Message(client + ": 连接上了服务器");
+                Message("客户机-" + client + ": " + ": 连接上了服务器");
                 Clientlist.Add(client,Client);
 
                 Task.Factory.StartNew(new Action((() =>
@@ -73,6 +73,10 @@ namespace _01.网口通信_服务端
         private void Message(string info)
         {
             time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            //为true时表示调用Message方法的是另一个线程，此时需要将Message方法传送给一个委托让委托所在的线程来代替执行Message方法；
+            //为false时表示Message的调用者没有跨线程调用Message方法，此时直接执行else中的代码即可。
+
+            //不跨线程调用时的执行逻辑
             if (!listView1.InvokeRequired)
             {
                 ListViewItem lst = new ListViewItem(time);
@@ -80,6 +84,7 @@ namespace _01.网口通信_服务端
                 listView1.Items.Insert(listView1.Items.Count, lst);
 
             }
+            //跨线程调用时的执行逻辑
             else
             {
                 Invoke(new Action(() =>
@@ -104,17 +109,15 @@ namespace _01.网口通信_服务端
                 }
                 catch (Exception ex)
                 {
-
-                   
+  
                 }
             }
         }
 
-        private  void ReceiveMsg( Socket Client )
+        private void ReceiveMsg( Socket Client )
         {
             while (true)
             {
-                DateTime a = DateTime.Now;
                 byte[] buffer = new byte[10000];
                 int len = 0;
                 string client = Client.RemoteEndPoint.ToString();
@@ -125,7 +128,7 @@ namespace _01.网口通信_服务端
                 }
                 catch (Exception ex)
                 {
-                    Message(client + "：失去连接~");
+                    Message("客户机-" + client + ": " + "：失去连接~");
                     break;
                     
                 }
@@ -133,11 +136,11 @@ namespace _01.网口通信_服务端
                 if (len > 0)
                 {
                     string msg=Encoding.Default.GetString(buffer, 0, len);
-                    Message("客户端-"+client + ": " + msg);
+                    Message("客户机-" + client + ": " + msg);
                 }
                 else
                 {
-                    Message(client + ": 失去连接~");
+                    Message("客户机-" + client + ": " + ": 失去连接~");
                     Clientlist.Remove(client);  
                 }
             }
